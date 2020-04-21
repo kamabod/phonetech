@@ -11,6 +11,9 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/general.css">
+
   <title>My final project</title>
 
   <style type="text/css">
@@ -39,16 +42,19 @@
       padding-left: 0px;
       padding-right: 0px;
     }
-    
-    #passwordMessage{
+
+    #passwordMessage {
       display: none;
     }
 
-    .jumbotron{
-      margin-top:-50px;
-      margin-bottom:-50px;
-    }
+    .row-bg {
+      background-image: url("Images/smartphones.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
 
+      height: 600px;
+      opacity: 1;
+    }
   </style>
 
 </head>
@@ -70,7 +76,8 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
                   Dropdown
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -81,7 +88,7 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
-            </li>
+              </li>
               <li class="nav-item active">
                 <a class="nav-link" href="phones.html">Phones <span class="sr-only">(current)</span></a>
               </li>
@@ -98,31 +105,26 @@
                   <a class="nav-link" data-toggle="modal" data-target="#myModal"><i class="fa fa-user fa-2x"></i></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="#"><i class="fa fa-shopping-cart fa-2x"></i></a>
+                  <a class="nav-link" data-toggle="modal" data-target="#myModal1"><i
+                      class="fa fa-shopping-cart fa-2x"></i></a>
                 </li>
               </ul>
           </div>
         </nav>
 
-        <div class="jumbotron">
+        <div class="jumbotron row-bg">
           <h1 class="display-10">Smartphones!</h1>
-          <p class="lead"> Smartphones are the most personal tech we own. That is why it is so important to pick the
-            phone that is best for your needs.
-            <br> There are many factors to consider, from the design to operating system, from security to durability.
-            <br>The best phones deliver great cameras, the performance you need to multitask and the endurance to last
-            the whole day.</p>
-          <hr class="my-4">
           <p>Let us help you to make the right choice!<br><br>
             <i class="fa fa-check">Low prices</i><br>
             <i class="fa fa-check">Cheap shipping</i><br>
             <i class="fa fa-check">Friendly customer service</i><br>
           </p>
-          <a class="btn btn-primary btn-md" href="phones.html" role="button">Phones</a>
+          <a class="btn btn-light btn-md" href="phones.html" role="button">Phones</a>
         </div>
 
-             
-       
-        
+
+
+
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -173,6 +175,51 @@
     </div>
   </div>
 
+  <!--Modal shopping cart-->
+  <div class="modal" id=myModal1 tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your shopping cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-image">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Total</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="w-25"></td>
+                <td>Sample phone</td>
+                <td>E1000</td>
+                <td class=”qty”><input type=”text” class=”form-control” id=”input1″ value=”2″></td>
+                <td>Sum of sample phone and quantity</td>
+                <td>
+                  <a href=”#” class=”btn btn-light btn-sm”>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Check out</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal login -->
   <div class="modal" id=myModal tabindex="-1" role="dialog">
@@ -196,7 +243,7 @@
               <label for="userPassword">Password</label>
               <input type="password" class="form-control" id="userPassword" placeholder="Password">
               <span id="passwordMessage">Password must have 6 characters</span>
-              
+
             </div>
         </div>
         <div class="modal-footer">
@@ -209,7 +256,7 @@
   </div>
 
   <script>
-   
+
 
     function checkPassword() {
       var x = document.getElementById("userPassword").value;
