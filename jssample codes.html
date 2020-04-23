@@ -1,0 +1,62 @@
+<script language="javascript">
+<!--//
+/*This Script allows people to enter by using a form that asks for a
+UserID and Password*/
+function pasuser(form) {
+if (form.id.value=="JavaScript") { 
+if (form.pass.value=="Kit") {              
+location="page2.html" 
+} else {
+alert("Invalid Password")
+}
+} else {  alert("Invalid UserID")
+}
+}
+//-->
+</script>
+
+<center>
+<table bgcolor="white" cellpadding="12" border="1">
+<tr><td colspan="2"><center><h1><i><b>Login
+Area</b></i></h1></center></td></tr>
+<tr><td><h1><i><b>UserID:</b></i></h1></td><td><form name="login"><input
+name="id" type="text"></td></tr>
+<tr><td><h1><i><b>Password:</b></i></h1></td><td><input name="pass"
+type="password"></td></tr>
+<tr><td><center><input type="button" value="Login"
+onClick="pasuser(this.form)"></center></td><td><center><br><input
+type="Reset"></form></td></tr></table></center> 
+
+<script>
+    function login()
+  {
+
+    if($this->session->userdata('logged_in'))
+    {
+    return true;
+    }
+     else
+     {
+       alert("Please login first!");;
+
+
+     }
+
+     }
+  </script>
+
+// Get the text field that we're going to track
+let field = document.getElementById("field");
+ 
+// See if we have an autosave value
+// (this will only happen if the page is accidentally refreshed)
+if (sessionStorage.getItem("autosave")) {
+  // Restore the contents of the text field
+  field.value = sessionStorage.getItem("autosave");
+}
+ 
+// Listen for changes in the text field
+field.addEventListener("change", function() {
+  // And save the results into the session storage object
+  sessionStorage.setItem("autosave", field.value);
+});

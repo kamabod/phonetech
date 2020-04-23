@@ -1,92 +1,181 @@
 <DOCTtype>
-    <html>
+  <html>
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <!--Font Awesome-->
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/general.css">
 
-        <link rel="stylesheet" href="css/phones.css">
+    <link rel="stylesheet" href="css/phones.css">
 
-        <title>Phones</title>
+    <script src="js/login.js"></script>
 
-    </head>
+    <title>Phones</title>
 
-    <body>
+  </head>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="myProject.html">Back</a>
-                    </nav>
-                </div>
-            </div>
+  <body>
 
-            <h1 class="padding-phones">Smartphones</h1>
-            <p class="padding-phones">Smartphones are the most personal tech we own. That is why it is so important to
-                pick the
-                phone that is best for your needs.
-                <br>The best phones deliver great cameras, the performance you need to multitask and the endurance to
-                last the whole day.</p>
-            <hr>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="myProject.html">Back</a>
+          </nav>
+        </div>
+      </div>
+
+      <h1 class="padding-phones">Smartphones</h1>
+      <p class="padding-phones">Smartphones are the most personal tech we own. That is why it is so important to
+        pick the
+        phone that is best for your needs.
+        <br>The best phones deliver great cameras, the performance you need to multitask and the endurance to
+        last the whole day.</p>
+      <hr>
+      <br>
+      <div class="row">
+        <div class="col-md-6 img-phones text-center">
+          <img src="Images/apple11Silver.jpg" class="img-fluid" height="330" width="230">
+        </div>
+        <div class="col-md-4 text-phones">
+
+          <ul>
+            <li>Apple iPhone 11 Pro</li>
             <br>
-            <div class="row">
-                <div class="col-md-6 img-phones text-center">
-                    <img src="Images/apple11Silver.jpg" class="img-fluid" height="330" width="230">
-                </div>
-                <div class="col-md-4 text-phones">
+            <li>E 1100</li>
+            <br>
+            <li>64 GB storage</li>
+            <br>
+            <li>Silver</li>
+            <br>
+            <li>5,8 inch Super Retina Display</li>
+            <br>
+            <li>12 MP triple camera+12 PM camera(front)</li>
+            <br>
+            <li>Apple A13 Bionic</li>
 
-                    <ul>
-                        <li>Apple iPhone 11 Pro</li>
-                        <br>
-                        <li>E 1100</li>
-                        <br>
-                        <li>64 GB storage</li>
-                        <br>
-                        <li>Silver</li>
-                        <br>
-                        <li>5,8 inch Super Retina Display</li>
-                        <br>
-                        <li>12 MP triple camera+12 PM camera(front)</li>
-                        <br>
-                        <li>Apple A13 Bionic</li>
-
-                    </ul>
-                </div>
-
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-primary">Add to basket</button>
-                </div>
-
-            </div>
+          </ul>
         </div>
 
+        <div class="col-md-2">
+
+          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1"
+            onclick="checkPassword()">Add to basket</a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal login -->
+    <div class="modal" id=myModal tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form name="myForm">
+              <div class="form-group">
+                <label for="userEmail">Email address</label>
+                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="password" class="form-control" id="userPassword" placeholder="Password">
+                <span id="passwordMessage">Password must have 6 characters</span>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" onclick="checkPassword()">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal shopping basket-->
+    <div class="modal" id=myModal1 tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+            <h5 class="modal-title">Your shopping basket</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">Product</h6>
+                      <small class="text-muted">Brief description</small>
+                    </div>
+                    <div>
+                      <h6 class="my-0">Quantity</h6>
+                      <small class="text-muted">Sample quantity</small>
+                    </div>
+                    <div>
+                      <h6 class="my-0">Price</h6>
+                      <small class="text-muted">Sample price</small>
+                    </div>
+                    <span class="text-muted">E20</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <span>Sub-total (EUR)</span>
+                    <strong>E15</strong>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <span>Vat (EUR)</span>
+                    <strong>E5</strong>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (EUR)</span>
+                    <strong>E20</strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-primary" href="confirmOrder.html" role="button">Confirm order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+  </body>
 
 
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-    </body>
-
-
-
-    </html>
+  </html>
