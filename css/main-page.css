@@ -1,0 +1,24 @@
+#passwordMessage {
+  display: none;
+}
+
+.row-bg {
+  background-image: url("../Images/smartphones.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: px;
+  opacity: 1;
+}
+
+.carousel-item {
+  height: 580px
+}
+
+.carousel-content {
+  color: white;
+  font-size: xx-large;
+  position: absolute;
+  bottom: 60%;
+  left: 40%
+}

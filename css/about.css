@@ -1,0 +1,7 @@
+.row-bg {
+  background-image: url("../Images/aboutPic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+}
