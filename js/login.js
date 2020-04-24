@@ -5,6 +5,7 @@ function checkPassword(event) {
     var y = document.getElementById("userEmail").value;
 
     document.getElementById("passwordMessage").style.display = "none";
+    
 
     if (x == "" || y == "") {
         //alert("Error: Password cannot be blank!");
@@ -15,21 +16,17 @@ function checkPassword(event) {
         document.getElementById("passwordMessage").style.display = "Block";
     } else {
         userisLoggedin = true;
-        //<span class="navbar-text">Logged In</span>
     }
 
     if (userisLoggedin == true) {
-        document.getElementById("txtLogin").innerText = "Logged In";
+        document.getElementById("loginButton").style.display = "none";
+        document.getElementById("buyNowButton").style.display = "Block";
+        document.getElementById("userLoggedIn").style.display = "Block";
+        document.getElementById("userLoggedIn").innerText = y;
+        document.getElementById("userLoggedIn").innerText = "Logged in"+" "+ " "+y;
 
-        $(document).ready(function () {
-
-            $("#myModal").modal('show')
-
-        }
-
-/*display modal if conditin true
-}
-
+        //<span class="navbar-text">Logged In</span>
+    }
 }
 
 /*

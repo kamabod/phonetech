@@ -11,3 +11,23 @@
     padding-bottom: 10px;
     padding-left: 10px;
 }
+
+/*login popup*/
+#passwordMessage {
+    display: none;
+}
+#userLoggedIn {
+    display: none;
+}
+
+/* Buy now button*/
+#buyNowButton {
+    display: none;
+
+}
+
+
+/*Login button
+#loginButton {
+    display: none;
+}*/

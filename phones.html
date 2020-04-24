@@ -29,6 +29,7 @@
         <div class="col-md-12">
           <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="myProject.html">Back</a>
+            <span class="navbar-text" id="userLoggedIn">Logged In</span>
           </nav>
         </div>
       </div>
@@ -67,8 +68,10 @@
 
         <div class="col-md-2">
 
-          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1"
-            onclick="checkPassword()">Add to basket</a>
+          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
+            buy</a>
+          <br>
+          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1" id="buyNowButton">Buy now</a>
 
         </div>
 
@@ -101,8 +104,9 @@
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" onclick="checkPassword()">Submit</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="checkPassword()">Submit</button>
+            <!-- <a class="btn btn-primary" role="button" data-toggle="modal" data-target=""
+              onclick="checkPassword()">Submit</a>-->
           </div>
           </form>
         </div>
