@@ -3,6 +3,8 @@ function checkPassword(event) {
     var invalidFields = false;
     var userPassword = document.getElementById("userPassword").value;
     var userEmail = document.getElementById("userEmail").value;
+    
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
     document.getElementById("passwordMessage").style.display = "none";
     document.getElementById("emailMessage").style.display = "none";
@@ -24,33 +26,34 @@ function checkPassword(event) {
         document.getElementById("emailMessage").style.display = "Block";
         invalidFields = true;
     }
+    else if (!filter.test(userEmail)) {
+        //alert('Please provide a valid email address');
+        document.getElementById("emailMessage").style.display = "Block";
+        invalidFields = true;
+    }
 
     if (invalidFields == false) {
-        // you are to go
-        // login modal goes away
         document.getElementById("loginButton").style.display = "none";
         document.getElementById("buyNowButton").style.display = "Block";
         document.getElementById("userLoggedIn").style.display = "Block";
         document.getElementById("userLoggedIn").innerText = userEmail;
         document.getElementById("userLoggedIn").innerText = userEmail + " logged in"
-    }
-    else{
-        // we have invalids
-        // login modal stays
+        document.getElementById("btnCloseModal").click();
     }
 }
 
 /*
+function checkEmail() {
 
-}var userisLoggedin = true;
-var y = document.getElementById("userEmail").value;
-var x = document.getElementById("userPassword");
+    var userEmail = document.getElementById("userEmail");
 
-if (x !== null && y !== null) {
-return true;
-} else {
-userisLoggedin = false;
-alert("Please log in first");
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (!filter.test(userEmail.value)) {
+        alert('Please provide a valid email address');
+        userEmail.focus;
+        return false;
+
+    }
 }
-
 */
