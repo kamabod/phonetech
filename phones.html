@@ -28,7 +28,11 @@
       <div class="row">
         <div class="col-md-12">
           <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="myProject.html">Back</a>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="navbar-brand" href="myProject.html">Back</a>
+              </li>
+            </ul>
             <span class="navbar-text" id="userLoggedIn">Logged In</span>
           </nav>
         </div>
@@ -71,7 +75,8 @@
           <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
             buy</a>
           <br>
-          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1" id="buyNowButton">Buy now</a>
+          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1" id="buyNowButton">Buy
+            now</a>
 
         </div>
 
@@ -92,19 +97,19 @@
             <form name="myForm">
               <div class="form-group">
                 <label for="userEmail">Email address</label>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
-                  placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                  else.</small>
+                <input type="email" pattern=" /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" class="form-control"
+                  id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailMessage" class="form-text text-danger">Please enter a valid email address</small>
               </div>
               <div class="form-group">
                 <label for="userPassword">Password</label>
                 <input type="password" class="form-control" id="userPassword" placeholder="Password">
-                <span id="passwordMessage">Password must have 6 characters</span>
+                <small id="passwordMessage" class="form-text text-danger">Password must have 6 characters</small>
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="checkPassword()">Submit</button>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="checkPassword()"
+              type="submit">Submit</button>
             <!-- <a class="btn btn-primary" role="button" data-toggle="modal" data-target=""
               onclick="checkPassword()">Submit</a>-->
           </div>

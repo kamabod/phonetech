@@ -27,6 +27,11 @@
 }
 
 
+#emailMessage {
+display:none;
+}
+
+
 /*Login button
 #loginButton {
     display: none;
