@@ -171,6 +171,59 @@
       </div>
     </div>
 
+    <?php
+	
+		//Create a database connection
+		$dbhost = "localhost";
+		$dbuser = "root";
+		$dbpassword = "";
+		$dbname = "phonetech_db";
+
+		$connection = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
+		
+		//Test if connection occoured
+		if(mysqli_connect_errno()){
+			die("DB connection failed: " .
+				mysqli_connect_error() .
+					" (" . mysqli_connect_errno() . ")"
+					);
+		}
+
+		if (!$connection)
+			{
+				die('Could not connect: ' . mysqli_error());
+			}
+		
+		//Save the Query
+		
+			$sql = mysqli_query ($connection,"SELECT name FROM products");
+
+			echo "<ul id="myListFromDB">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>"
+
+			while ($row = mysqli_fetch_assoc($result)){
+
+				echo "<li>:" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				echo "<br><li>" . $row['name'];
+				 
+			}
+			echo "</ul>";
+
+			mysql_free_result($result);
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
