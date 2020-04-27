@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+  <script>
+
+    Display random images
+
+    ImageSwitch = new Array();
+    ImageSwitch[0] = 'Images/smartphones.jpg';
+    ImageSwitch[1] = 'Images/iphone11.jpg';
+    ImageSwitch[2] = 'Images/phoneInSpace.jpg';
+    ImageSwitch[3] = 'Images/selfies.jpg';
+
+    function swapImage() {
+      document.getElementById("myPic").setAttribute("src", ImageSwitch[Math.round(Math.random() * 3)]);
+    }
+
+    function initialise() {
+      showImage(idx)
+    }
+    window.onload = initialise;
+
+
+
+    // Mozilla, Opera and webkit nightlies currently support this event
+    if (document.addEventListener) {
+      window.addEventListener('load', swap, false);
+      // If IE event model is used
+    } else if (document.attachEvent) {
+      window.attachEvent('onload', swap);
+    }
+
+
+
+    window.onload = radnomPic;
+
+    var myPics = new Array("Images/smartphones.jpg", "Images/phoneInSpace.jpg", "Images/selfies.jpg");
+
+    function radnomPic() {
+      var randomNum = Math.floor(Math.random() * myPics.length);
+      document.getElementById("image1").src = myPics[randomNum];
+    }
+
+
+
+
+
+
+
+  </script>
+
+<body></body>
+
+</html>
