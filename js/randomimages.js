@@ -2,14 +2,12 @@
 window.onload = choosePic;
 
 var myPics = new Array("Images/smartphones.jpg", "Images/phoneInSpace.jpg", "Images/selfies.jpg", "Images/apple11Silver.jpg", "Images/iphone11.jpg", "Images/iphone11a.jpg");
-var uniqueNumbers = [3];
+var uniqueNumbers = new Array(3);
 
 function choosePic() {
   //Fill array unique numbers
   uniqueRandom();
 
-  console.log(uniqueNumbers);
-  
   //set images
   document.getElementById("image1").src = myPics[uniqueNumbers[0]];
   document.getElementById("image2").src = myPics[uniqueNumbers[1]];
