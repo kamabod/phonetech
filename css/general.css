@@ -23,12 +23,6 @@ nav {
   font-size: 4em
 }
 
-/*delete this? */
-.jumbotron-delete {
-  background: -webkit-linear-gradient(#d3d3d3, #ededed, #d3d3d3, #ededed, #d3d3d3);
-  background: -o-linear-gradient(#d3d3d3, #ededed, #d3d3d3, #ededed, #d3d3d3);
-  background: linear-gradient(#d3d3d3, #ededed, #d3d3d3, #ededed, #d3d3d3);
-}
 
 .container-fluid {
   padding-left: 0px;
@@ -45,4 +39,10 @@ nav {
 .text-left {
   color: #a8cbd8;
   font-size: 16px;
+}
+
+.navbar-nav {
+  margin-right:100px;
+  margin-left:100px;
+
 }

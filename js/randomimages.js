@@ -28,20 +28,4 @@ function uniqueRandom() {
 }
 
 
-//ImageSwitch = new Array();
-//ImageSwitch[0] = 'Images/smartphones.jpg';
-//ImageSwitch[1] = 'Images/iphone11.jpg';
-////ImageSwitch[2] = 'Images/phoneInSpace.jpg';
-//ImageSwitch[3] = 'Images/selfies.jpg';
-
-//function swapImage() {
-    //document.getElementById("myPic").setAttribute("src", ImageSwitch[Math.round(Math.random() * 3)]);
-//}
-
-
-//if ( document.addEventListener ) {
-   // window.addEventListener( 'load', swap, false );
-  // If IE event model is used
-  //} else if ( document.attachEvent ) {
-   // window.attachEvent( 'onload', swap );
 

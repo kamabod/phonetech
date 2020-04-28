@@ -1,4 +1,7 @@
-</head>
+<DOCTtype html>
+<html>
+	
+
 
 <body>
 	<h1>This is from the MYPRODUCTS database</h1>
@@ -38,9 +41,9 @@
 			<li></li>
 			<li></li>
 			<li></li>
-			<li></li>"
+			<li></li>";
 
-			while ($row = mysqli_fetch_assoc($result)){
+			while ($row = mysqli_fetch_array($result)){
 
 				echo "<li>:" . $row['name'];
 				echo "<br><li>" . $row['name'];
@@ -54,7 +57,7 @@
 			}
 			echo "</ul>";
 
-			mysql_free_result($result);
+			mysqli_free_result($result);
 
 			
 		 
@@ -70,14 +73,9 @@
 
 		
 		// Close database connection
-			//mysqli_close($connection);
+		   mysqli_close($connection);
 	?>
 
-
-
-</body>
-
-</html>
 
 <script>
 
@@ -92,3 +90,5 @@
 
 
 </script>
+		</body>
+		</html>
