@@ -25,11 +25,36 @@
 
   <body>
 
+  <?php
+    
+      //Create a database connection
+      $dbhost = "localhost";
+      $dbuser = "root";
+      $dbpassword = "";
+      $dbname = "phonetech_db";
+
+      $connection = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
+      
+      //Test if connection occoured
+      if(mysqli_connect_errno()){
+        die("DB connection failed: " .
+          mysqli_connect_error() .
+            " (" . mysqli_connect_errno() . ")"
+            );
+      }
+
+      if (!$connection)
+        {
+          die('Could not connect: ' . mysqli_error());
+        }
+      
+    ?>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="navbar-brand" href="myProject.php">Back</a>
               </li>
@@ -53,22 +78,53 @@
         </div>
         <div class="col-md-4 text-phones">
 
-          <ul>
-            <li>Apple iPhone 11 Pro</li>
-            <br>
-            <li>E 1100</li>
-            <br>
-            <li>64 GB storage</li>
-            <br>
-            <li>Silver</li>
-            <br>
-            <li>5,8 inch Super Retina Display</li>
-            <br>
-            <li>12 MP triple camera+12 PM camera(front)</li>
-            <br>
-            <li>Apple A13 Bionic</li>
+            <?php
 
-          </ul>
+              $phone_id =$_GET['id'];
+               // GET parameter always string//anything not numeric is 0, && is_numeric( $_GET['id'] ); //make sure it is an integer, it may be a string value
+
+              // if(!empty($_GET['id']) and is_numeric($_GET['id'])){
+              //  $phone_id = (int)$_GET['id'];
+              //}
+
+              //echo "$phone_id";
+              $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;//$phone_id LIMIT 1';
+              $result = mysqli_query($connection,$sql);
+
+              while ($row = mysqli_fetch_array($result)) {
+
+              
+              // if (is_int((int) $_GET['user_id']) && (int) $_GET['user_id'] != 0) {
+   // $user_id = $_GET['user_id'];
+  //}
+                //echo " $row['product_id']";
+              //$price= $row['price'];
+
+
+            //echo "$row['product_id']";
+                                
+                // while ($row = mysqli_fetch_assoc($result)){
+                // echo "<a class='dropdown-item' href='phones.php?id=" . $row['product_id'] . "'>";
+                // echo $row['name'] . "</a>";
+              
+              echo "<ul id='phoneList'>";
+              echo "<li>" . $row['name']. "</li>";
+              echo "<li>" . $row['price']. "</li>";
+              echo  "<li>" . $row['storage']. "</li>";
+              echo  "<li>" . $row['colour']. "</li>";
+              echo  "<li>" . $row['display']. "</li>";
+              echo  "<li>" . $row['camera']. "</li>";
+              echo  "<li>" . $row['processor']. "</li>";
+            
+            }
+
+            echo "</ul>";
+                
+            mysqli_free_result($result);
+
+            ?>
+        
+         
         </div>
 
         <div class="col-md-2">
@@ -135,7 +191,7 @@
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Product</h6>
-                      <small class="text-muted">Iphone 11 Pro</small>
+                      <small class="text-muted" id="productId">Iphone 11 Pro</small> 
                     </div>
                     <div>
                       <h6 class="my-0">Quantity</h6>
@@ -169,6 +225,11 @@
         </div>
       </div>
     </div>
+
+    <?php
+    //close db connection
+    mysqli_close($connection);
+    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

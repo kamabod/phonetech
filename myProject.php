@@ -73,11 +73,8 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <?php
             while ($row = mysqli_fetch_assoc($result)){
-              echo "<a class='dropdown-item' href='phones.php?id=";
-              echo $row['product_id']; //<<<<<< KAMILA get the column name of PHONE ID AND CHANGE THIS HERE
-              echo "'>";
-              echo $row['name']; 
-              echo "</a>";
+              echo "<a class='dropdown-item' href='phones.php?id=" . $row['product_id'] . "'>";
+              echo $row['name'] . "</a>";
             }
           ?>
           <!-- <a class="dropdown-item" href="http://localhost/phonetech/connectionToDb.php">Check our phones</a> -->

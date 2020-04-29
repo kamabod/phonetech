@@ -23,3 +23,20 @@ $result = mysql_query($query);
 Echo "Database Saved"; 
 mysql_close($connection);
 ?>
+
+/*<ul>
+            <li>Apple iPhone 11 Pro</li>
+            <br>
+            <li>E 1100</li>
+            <br>
+            <li>64 GB storage</li>
+            <br>
+            <li>Silver</li>
+            <br>
+            <li>5,8 inch Super Retina Display</li>
+            <br>
+            <li>12 MP triple camera+12 PM camera(front)</li>
+            <br>
+            <li>Apple A13 Bionic</li>
+
+          </ul>
