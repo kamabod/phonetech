@@ -74,13 +74,35 @@
       <br>
       <div class="row">
         <div class="col-md-6 img-phones text-center">
-          <img src="Images/apple11Silver.jpg" class="img-fluid" height="330" width="230">
+
+        <?php
+
+            $phone_id =$_GET['id'];
+            $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+            $result = mysqli_query($connection,$sql);
+
+            while ($row = mysqli_fetch_assoc($result)){
+              echo "<img src='DBimages/"  .$row['image'] . "' width='220' height='330'>";
+            }
+
+            mysqli_free_result($result);
+
+              //echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
+              // <img src="source.php?id=1" width="300" height="300" />
+             // <img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" height="200" width="200" class="img-thumnail" />
+            // <img src=images/$row[img] class='rounded-circle' alt='$row[p_name]'>
+            //width='220' height='330'
+
+        ?>
+
         </div>
         <div class="col-md-4 text-phones">
 
             <?php
 
               $phone_id =$_GET['id'];
+
+              //<img src="Images/apple11Silver.jpg" class="img-fluid" height="330" width="230"
                // GET parameter always string//anything not numeric is 0, && is_numeric( $_GET['id'] ); //make sure it is an integer, it may be a string value
 
               // if(!empty($_GET['id']) and is_numeric($_GET['id'])){
