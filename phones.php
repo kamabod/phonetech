@@ -213,7 +213,17 @@
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Product</h6>
-                      <small class="text-muted" id="productId">Iphone 11 Pro</small> 
+                      <small class="text-muted" id="productId">
+                        <?php
+                          $phone_id =$_GET['id'];
+                          $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                          $result = mysqli_query($connection,$sql);
+                          while ($row = mysqli_fetch_assoc($result)){
+                            echo $row['name'];
+                          }
+                          mysqli_free_result($result);
+                        ?>
+                      </small> 
                     </div>
                     <div>
                       <h6 class="my-0">Quantity</h6>
@@ -221,10 +231,26 @@
                     </div>
                     <div>
                       <h6 class="my-0">Price (Eur)</h6>
-                      <small class="text-muted" id="productPrice">1000</small>
+                      <small class="text-muted" id="productPrice">
+                      <?php
+                          $phone_id =$_GET['id'];
+                          $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                          $result = mysqli_query($connection,$sql);
+                          while ($row = mysqli_fetch_assoc($result)){
+                            echo $row['price'];
+                          }
+                          mysqli_free_result($result);
+                        ?>
+                      
+                      </small>
                     </div>
-                    <span class="text-muted" id="productSum">2000</span>
+                    <span class="text-muted" id="productSum"></span>
                   </li>
+                </ul>
+              </div>
+              <div class ="col-md-7"></div>
+              <div class="col-md-5">
+              <ul class="list-group mb-3">
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Sub-total (EUR)</span>
                     <strong id="productSubTotal">2000</strong>

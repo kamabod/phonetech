@@ -1,4 +1,66 @@
 
+ 
+  <?php
+
+$phone_id =$_GET['id'];
+$sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+$result = mysqli_query($connection,$sql);
+
+while ($row = mysqli_fetch_assoc($result)){
+  //echo "<img src='DBimages/"  .$row['image'] . "' width='220' height='330'>";
+  //echo "$row['name']"; 
+  //echo "<ul class='unstyled'>";//unstyled doesn't work
+  echo "<li>" . $row['name']. "</li>";
+}
+echo "</ul>";
+
+mysqli_free_result($result);
+
+?>
+
+
+<?php
+
+$phone_id =$_GET['id'];
+$sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+$result = mysqli_query($connection,$sql);
+
+while ($row = mysqli_fetch_assoc($result)){
+  //echo "<img src='DBimages/"  .$row['image'] . "' width='220' height='330'>";
+  //echo "$row['name']"; 
+  echo "<ul class='unstyled'>";//unstyled doesn't work
+  echo "<li>" . $row['price']. "</li>";
+}
+echo "</ul>";
+
+mysqli_free_result($result);
+
+?>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  <?php
  $connection = mysql_connect ('localhost','root','');
 mysql_select_db('ABC_Library');
