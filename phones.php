@@ -253,26 +253,42 @@
               <ul class="list-group mb-3">
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Sub-total (EUR)</span>
-                    <strong id="productSubTotal">2000</strong>
+                    <strong id="productSubTotal"></strong>
                   </li>
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Vat (EUR)</span>
-                    <strong id="productVat">400</strong>
+                    <strong id="productVat"></strong>
                   </li>
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Total (EUR)</span>
-                    <strong id="productTotal">2000</strong>
+                    <strong id="productTotal">s</strong>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <a class="btn btn-primary" href="confirmOrder.php" role="button">Confirm order</a>
+            <a class="btn btn-primary" href="confirmOrder.php" role="button" onclick="confirmOrder">Confirm order</a>
           </div>
         </div>
       </div>
     </div>
+
+    <script>
+    function confirmOrder(){
+
+      var produtName=document.getElementById("productId").text;
+      var productQuantity=document.getElementById("productQuantity").value;
+      var productPrice=document.getElementById("productPrice").text;
+
+      //var user_id=1; above button is not a button-onclick not working
+      //var product_id="<?php echo $phone_id =$_GET['id']; ?>" //$phone_id =$_GET['id'];
+
+      docuemnt.write(produtName,productQuantity,productPrice);
+    }
+    </script>
+
+
 
     <?php
     //close db connection
