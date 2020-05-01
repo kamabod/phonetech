@@ -19,7 +19,38 @@
     <title>Confirm order</title>
 
 </head>
+
 <body class="bg-light">
+
+<?php
+    
+      //Create a database connection
+      $dbhost = "localhost";
+      $dbuser = "root";
+      $dbpassword = "";
+      $dbname = "phonetech_db";
+
+      $connection = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
+      
+      //Test if connection occoured
+      if(mysqli_connect_errno()){
+        die("DB connection failed: " .
+          mysqli_connect_error() .
+            " (" . mysqli_connect_errno() . ")"
+            );
+      }
+
+      if (!$connection)
+        {
+          die('Could not connect: ' . mysqli_error());
+        }
+      
+      //Save the Query
+      
+        $sql = "SELECT * FROM PRODUCTS";
+        $result = mysqli_query($connection, $sql);
+  ?>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -44,29 +75,42 @@
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Product name</h6>
-                            <small class="text-muted">Brief description</small>
+                            <small class="text-muted">
+                            <?php
+                          $phone_id =$_GET['id'];
+                          $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                          $result = mysqli_query($connection,$sql);
+                          while ($row = mysqli_fetch_assoc($result)){
+                            echo $row['name'];
+                            
+                          }
+                          mysqli_free_result($result);
+                        ?>
+                            
+                            
+                            </small>
                         </div>
                         <div>
                             <h6 class="my-0">Quantity</h6>
-                            <small class="text-muted">Sample quantity</small>
+                            <small class="text-muted"></small>
                         </div>
                         <div>
                             <h6 class="my-0">Price</h6>
-                            <small class="text-muted">Sample price</small>
+                            <small class="text-muted"></small>
                         </div>
-                        <span class="text-muted">E20</span>
+                        <span class="text-muted"></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Sub-total (EUR)</span>
-                        <strong>E15</strong>
+                        <strong></strong>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Vat (EUR)</span>
-                        <strong>E5</strong>
+                        <strong></strong>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (EUR)</span>
-                        <strong>E20</strong>
+                        <strong></strong>
                     </li>
                 </ul>
                 <h5 class="d-flex justify-content-between align-items-center mb-3">
@@ -80,6 +124,11 @@
             </div>
         </div>
 
+
+        <?php
+            //close db connection
+            mysqli_close($connection);
+        ?>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

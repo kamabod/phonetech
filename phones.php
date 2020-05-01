@@ -100,16 +100,6 @@
 
             <?php
 
-              $phone_id =$_GET['id'];
-
-              //<img src="Images/apple11Silver.jpg" class="img-fluid" height="330" width="230"
-               // GET parameter always string//anything not numeric is 0, && is_numeric( $_GET['id'] ); //make sure it is an integer, it may be a string value
-
-              // if(!empty($_GET['id']) and is_numeric($_GET['id'])){
-              //  $phone_id = (int)$_GET['id'];
-              //}
-
-              //echo "$phone_id";
               $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;//$phone_id LIMIT 1';
               $result = mysqli_query($connection,$sql);
 
@@ -213,13 +203,14 @@
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Product</h6>
-                      <small class="text-muted" id="productId">
+                      <small class="text-muted">
                         <?php
                           $phone_id =$_GET['id'];
                           $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
                           $result = mysqli_query($connection,$sql);
                           while ($row = mysqli_fetch_assoc($result)){
                             echo $row['name'];
+                            echo "<input type='hidden' id='productId' value='".$phone_id."'/>";
                           }
                           mysqli_free_result($result);
                         ?>
@@ -233,9 +224,6 @@
                       <h6 class="my-0">Price (Eur)</h6>
                       <small class="text-muted" id="productPrice">
                       <?php
-                          $phone_id =$_GET['id'];
-                          $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                          $result = mysqli_query($connection,$sql);
                           while ($row = mysqli_fetch_assoc($result)){
                             echo $row['price'];
                           }
@@ -268,25 +256,30 @@
             </div>
           </div>
           <div class="modal-footer">
-            <a class="btn btn-primary" href="confirmOrder.php" role="button" onclick="confirmOrder">Confirm order</a>
+            <a class="btn btn-primary" href="confirmOrder.php" role="button" >Confirm order</a>
+            <button type="button" class="btn btn-primary" onclick="confirmOrder()">Test</button>
+            
           </div>
         </div>
       </div>
     </div>
 
-    <script>
+  <script>
+
     function confirmOrder(){
 
-      var produtName=document.getElementById("productId").text;
+      var productId=document.getElementById("productId").value;
       var productQuantity=document.getElementById("productQuantity").value;
       var productPrice=document.getElementById("productPrice").text;
+      var userEmail=document.getElementById("userLoggedIn").innerText;
 
-      //var user_id=1; above button is not a button-onclick not working
-      //var product_id="<?php echo $phone_id =$_GET['id']; ?>" //$phone_id =$_GET['id'];
+      // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
+      window.location = "confirmOrder.php?phoneid="+ productId + "&qty="+productQuantity+"&email="+userEmail;
 
-      docuemnt.write(produtName,productQuantity,productPrice);
     }
-    </script>
+
+ 
+  </script>
 
 
 
