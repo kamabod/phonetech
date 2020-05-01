@@ -55,7 +55,31 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="myProject.php">Back</a>
+                 <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="navbar-brand" href="myProject.php">Back</a>
+                    </li>
+                </ul>
+                    <span class="navbar-text" id="userLoggedIn">
+
+                        <?php
+                                    $phone_email = $_GET['email'];
+                                    echo $phone_email;
+
+                                // $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                                //// $result = mysqli_query($connection,$sql);
+                                // while ($row = mysqli_fetch_assoc($result)){
+                                //     echo $row['name'];
+                                        
+                                    //}
+                                // mysqli_free_result($result);
+                        ?>
+                                    
+                                                                                
+                    </span>
+                </nav>
+
+
                 </nav>
             </div>
         </div>
@@ -76,41 +100,64 @@
                         <div>
                             <h6 class="my-0">Product name</h6>
                             <small class="text-muted">
-                            <?php
-                          $phone_id =$_GET['id'];
-                          $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                          $result = mysqli_query($connection,$sql);
-                          while ($row = mysqli_fetch_assoc($result)){
-                            echo $row['name'];
-                            
-                          }
-                          mysqli_free_result($result);
-                        ?>
+                                <?php
+                                $phone_id =$_GET['phoneid']; //need name not id of phone
+                                
+                                $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                                $result = mysqli_query($connection,$sql);
+                                while ($row = mysqli_fetch_assoc($result)){
+                                echo $row['name'];
+                                    
+                                }
+                                mysqli_free_result($result);
+                            ?>
                             
                             
                             </small>
                         </div>
                         <div>
                             <h6 class="my-0">Quantity</h6>
-                            <small class="text-muted"></small>
+                            <small class="text-muted">
+
+                                <?php
+                                    $phone_qty =$_GET['qty'];
+                                    echo $phone_qty;
+                      
+                                ?>
+
+
+                            </small>
                         </div>
                         <div>
                             <h6 class="my-0">Price</h6>
-                            <small class="text-muted"></small>
+                            <small class="text-muted">
+                            <?php
+                            $phone_id =$_GET['phoneid'];
+                            $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                            $result = mysqli_query($connection,$sql);
+                            while ($row = mysqli_fetch_assoc($result)){
+                            echo $row['price'];
+                                
+                            }
+                             mysqli_free_result($result);
+                            ?>   
+                            
+                            
+                            </small>
                         </div>
                         <span class="text-muted"></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Sub-total (EUR)</span>
-                        <strong></strong>
+                        <strong id="productSubTotal"></strong>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Vat (EUR)</span>
-                        <strong></strong>
+                        <strong id="productVat"></strong>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (EUR)</span>
-                        <strong></strong>
+                        <strong id="productTotal"></strong>
                     </li>
                 </ul>
                 <h5 class="d-flex justify-content-between align-items-center mb-3">

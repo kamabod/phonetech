@@ -224,8 +224,13 @@
                       <h6 class="my-0">Price (Eur)</h6>
                       <small class="text-muted" id="productPrice">
                       <?php
-                          while ($row = mysqli_fetch_assoc($result)){
-                            echo $row['price'];
+
+                        $phone_id =$_GET['id'];
+                        $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
+                        $result = mysqli_query($connection,$sql);
+                        while ($row = mysqli_fetch_assoc($result)){
+                          echo $row['price'];
+                         
                           }
                           mysqli_free_result($result);
                         ?>
@@ -249,7 +254,7 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Total (EUR)</span>
-                    <strong id="productTotal">s</strong>
+                    <strong id="productTotal"></strong>
                   </li>
                 </ul>
               </div>
@@ -275,6 +280,8 @@
 
       // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
       window.location = "confirmOrder.php?phoneid="+ productId + "&qty="+productQuantity+"&email="+userEmail;
+
+      
 
     }
 
