@@ -64,8 +64,8 @@
         </div>
       </div>
 
-      <h1 class="padding-phones">Smartphones</h1>
-      <p class="padding-phones">Smartphones are the most personal tech we own. That is why it is so important to
+      <h1 class="ad-text-phones">Smartphones</h1>
+      <p class="ad-text-phones">Smartphones are the most personal tech we own. That is why it is so important to
         pick the
         phone that is best for your needs.
         <br>The best phones deliver great cameras, the performance you need to multitask and the endurance to
@@ -96,50 +96,32 @@
         ?>
 
         </div>
-        <div class="col-md-4 text-phones">
-
+        <div class="col-md-4 text-phones phone-padding">
             <?php
 
               $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;//$phone_id LIMIT 1';
               $result = mysqli_query($connection,$sql);
 
               while ($row = mysqli_fetch_array($result)) {
+                echo "<ul id='phoneList'>";
+                echo "<li>" . $row['name']. "</li>";
+                echo "<li>" . $row['price']. "</li>";
+                echo  "<li>" . $row['storage']. "</li>";
+                echo  "<li>" . $row['colour']. "</li>";
+                echo  "<li>" . $row['display']. "</li>";
+                echo  "<li>" . $row['camera']. "</li>";
+                echo  "<li>" . $row['processor']. "</li>";
+              }
 
-              
-              // if (is_int((int) $_GET['user_id']) && (int) $_GET['user_id'] != 0) {
-   // $user_id = $_GET['user_id'];
-  //}
-                //echo " $row['product_id']";
-              //$price= $row['price'];
-
-
-            //echo "$row['product_id']";
-                                
-                // while ($row = mysqli_fetch_assoc($result)){
-                // echo "<a class='dropdown-item' href='phones.php?id=" . $row['product_id'] . "'>";
-                // echo $row['name'] . "</a>";
-              
-              echo "<ul id='phoneList'>";
-              echo "<li>" . $row['name']. "</li>";
-              echo "<li>" . $row['price']. "</li>";
-              echo  "<li>" . $row['storage']. "</li>";
-              echo  "<li>" . $row['colour']. "</li>";
-              echo  "<li>" . $row['display']. "</li>";
-              echo  "<li>" . $row['camera']. "</li>";
-              echo  "<li>" . $row['processor']. "</li>";
-            
-            }
-
-            echo "</ul>";
+              echo "</ul>";
                 
-            mysqli_free_result($result);
+              mysqli_free_result($result);
 
             ?>
-        
          
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 phone-padding">
 
           <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
             buy</a>

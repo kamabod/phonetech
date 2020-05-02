@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/order.css">
+    
 
     <title>Confirm order</title>
 
@@ -117,7 +118,7 @@
                         </div>
                         <div>
                             <h6 class="my-0">Quantity</h6>
-                            <small class="text-muted">
+                            <small class="text-muted" id="productQuantity">
 
                                 <?php
                                     $phone_qty =$_GET['qty'];
@@ -130,7 +131,7 @@
                         </div>
                         <div>
                             <h6 class="my-0">Price</h6>
-                            <small class="text-muted">
+                            <small class="text-muted" id="productPrice">
                             <?php
                             $phone_id =$_GET['phoneid'];
                             $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
@@ -145,7 +146,7 @@
                             
                             </small>
                         </div>
-                        <span class="text-muted"></span>
+                        <span class="text-muted" id="productSum"></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Sub-total (EUR)</span>
@@ -176,6 +177,8 @@
             //close db connection
             mysqli_close($connection);
         ?>
+    
+        <script src="js/shoppingBasket.js"></script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

@@ -6,11 +6,16 @@
     align-items: center;
 }
 
-.padding-phones {
+.ad-text-phones {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
 }
+
+.phone-padding {
+    padding-top: 50px;
+}
+
 
 /*login popup*/
 #passwordMessage {
@@ -30,6 +35,7 @@
 #emailMessage {
     display:none;
 }
+
 
 
 /*Login button
