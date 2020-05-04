@@ -56,7 +56,7 @@
     <div class="row">
       <div class="col-md-12">
 
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
           <a class="navbar-brand" href="#">Phonetech</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,23 +101,23 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="Images/smartphones.jpg" id="image1" class="d-block w-100" alt="First slide">
+              <img src="Images/smartphones.jpg" id="image1" class="d-block w-100">
                 <div class="carousel-caption">
-                <h2 class="h3-responsive">Committed to Connecting</h2>
+                <h1 class="h3-responsive">Connect</h1>
                 <p>Phonetech</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="Images/phoneInSpace.jpg" id="image2" class="d-block w-100">
                <div class="carousel-caption">
-                <h2 class="h3-responsive">Communicating to the world</h2>
+                <h1 class="h3-responsive">Communicate</h1>
                 <p>Phonetech</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="Images/selfies.jpg" id="image3" class="d-block w-100">
                 <div class="carousel-caption">
-                <h2 class="h3-responsive">The perfect experience</h2>
+                <h1 class="h3-responsive">Experience</h1>
                 <p>Phonetech</p>
               </div>
             </div>

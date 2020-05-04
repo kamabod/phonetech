@@ -1,7 +1,8 @@
 
 window.onload = choosePic;
 
-var myPics = new Array("Images/smartphones.jpg", "Images/phoneInSpace.jpg", "Images/selfies.jpg", "Images/apple11Silver.jpg", "Images/iphone11.jpg", "Images/iphone11a.jpg");
+var myPics = new Array("Images/smartphones.jpg", "Images/phoneOnDesk.jpg", "Images/selfies.jpg", "Images/phoneInFlowers.jpg",
+ "Images/phoneAtConcert.jpg");
 var uniqueNumbers = new Array(3);
 
 function choosePic() {
