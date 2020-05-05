@@ -27,10 +27,10 @@
 			</div>
 		</div>
 		<div class="row row-bg">
-			<div class="col-md-8">
+			<div class="col-md-3"> 		
 			</div>
-			<div class="col-md-4 text-left vertical-center">
-				Our Story<br>
+		    <div class="col-md-6 text-justify vertical-center">
+				<p><strong>Our Story</strong><br><br>
 
 				Welcome to Phonetech.<br>
 
@@ -46,7 +46,10 @@
 				Sincerely,<br>
 
 				Kamila Zuzurka
-			</div>
+				</p>
+		   </div>
+			<div class="col-md-3">
+		    </div>
 		</div>
 	</div>
 

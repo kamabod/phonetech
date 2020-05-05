@@ -2,7 +2,7 @@
 window.onload = choosePic;
 
 var myPics = new Array("Images/smartphones.jpg", "Images/phoneOnDesk.jpg", "Images/selfies.jpg", "Images/phoneInFlowers.jpg",
- "Images/phoneOnBeach.jpg");
+ "Images/phoneOnBeach.jpg","Images/phoneRunning.jpg");
 var uniqueNumbers = new Array(3);
 
 function choosePic() {

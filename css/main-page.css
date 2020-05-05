@@ -2,7 +2,6 @@
   background-image: url("../Images/smartphones.jpg");
   background-position: center;
   background-repeat: no-repeat;
-
   height: px;
   opacity: 1;
 }
@@ -12,10 +11,14 @@
 }
 
 .carousel-content {
-  color: white;
+  color: #f793c8;
   font-size: xx-large;
   position: absolute;
   bottom: 60%;
   left: 40%
 }
 
+.h3-responsive {
+  color:#190a5e;
+  
+}

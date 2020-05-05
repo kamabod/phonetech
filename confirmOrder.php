@@ -55,7 +55,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
                  <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="navbar-brand" href="myProject.php">Back</a>
@@ -67,13 +67,7 @@
                                     $phone_email = $_GET['email'];
                                     echo $phone_email;
 
-                                // $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                                //// $result = mysqli_query($connection,$sql);
-                                // while ($row = mysqli_fetch_assoc($result)){
-                                //     echo $row['name'];
-                                        
-                                    //}
-                                // mysqli_free_result($result);
+                                
                         ?>
                                     
                                                                                 
@@ -90,12 +84,14 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <h5 class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-muted order-thanks">Thank you for your order. Please review your order details
-                        below.
+                        below.<br><br>If you have any questions, please <a href="mailto:support@phonetech.ie">Email us
+                        </a> or call us at <a href="tel:+003535555551212">555-555-1212</a>
+                        and we will be happy to help.
 
                     </span>
-                </h5>
+                </h6>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
@@ -148,6 +144,12 @@
                         </div>
                         <span class="text-muted" id="productSum"></span>
                     </li>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-5"></div>
+            <div class="col-md-4">
+
+            
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Sub-total (EUR)</span>
                         <strong id="productSubTotal"></strong>
@@ -161,13 +163,7 @@
                         <strong id="productTotal"></strong>
                     </li>
                 </ul>
-                <h5 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted padding">If you have any questions, please <a
-                            href="mailto:support@phonetech.ie">Email us
-                        </a> or call us at <a href="tel:+003535555551212">555-555-1212</a>
-                        and we will be happy to help.
-                    </span>
-                </h5>
+            </div>
                 <div class="col-md-3"></div>
             </div>
         </div>

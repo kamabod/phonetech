@@ -10,12 +10,26 @@
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
+    
 }
 
 .phone-padding {
     padding-top: 50px;
 }
 
+.modal-header {
+background-color: #f793c8;
+background-image: linear-gradient(315deg, #f793c8 0%, #190a5e 40%);
+
+}
+
+.modal-title {
+    color:white;
+}
+
+.fa-shopping-cart{
+    color:white;
+}
 
 /*login popup*/
 #passwordMessage {

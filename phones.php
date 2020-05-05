@@ -69,8 +69,7 @@
       <p class="ad-text-phones">Smartphones are the most personal tech we own. That is why it is so important to
         pick the
         phone that is best for your needs.
-        <br>The best phones deliver great cameras, the performance you need to multitask and the endurance to
-        last the whole day.</p>
+        <br> Check the phones we offer and pick the best one for You.</p>
       <hr>
       <br>
       <div class="row">
@@ -88,12 +87,7 @@
 
             mysqli_free_result($result);
 
-              //echo '<img src="data:image/jpeg;base64,'.base64_encode( $result['image'] ).'"/>';
-              // <img src="source.php?id=1" width="300" height="300" />
-             // <img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" height="200" width="200" class="img-thumnail" />
-            // <img src=images/$row[img] class='rounded-circle' alt='$row[p_name]'>
-            //width='220' height='330'
-
+              
         ?>
 
         </div>
@@ -124,18 +118,18 @@
 
         <div class="col-md-2 phone-padding">
 
-          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
-            buy</a>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
+            buy</button>
           <br>
-          <a class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal1" id="buyNowButton">Buy
-            now</a>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1" id="buyNowButton">Buy
+            now</button>
 
         </div>
 
       </div>
     </div>
 
-    <!-- Modal login -->
+    <!-- Modal login   <a class="btn btn-primary" href="confirmOrder.php" role="button" >Confirm order</a>-->
     <div class="modal" id="myModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -224,8 +218,8 @@
                   </li>
                 </ul>
               </div>
-              <div class ="col-md-7"></div>
-              <div class="col-md-5">
+              <div class ="col-md-5"></div>
+              <div class="col-md-7">
               <ul class="list-group mb-3">
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Sub-total (EUR)</span>
@@ -244,8 +238,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <a class="btn btn-primary" href="confirmOrder.php" role="button" >Confirm order</a>
-            <button type="button" class="btn btn-primary" onclick="confirmOrder()">Test</button>
+              <button type="button" class="btn btn-primary" onclick="confirmOrder()">Confirm order</button>
             
           </div>
         </div>
