@@ -34,14 +34,14 @@ nav {
 /*Button styling*/
 .btn-primary {
   
-background-color: #f793c8;
-background-image: linear-gradient(315deg, #f793c8 0%, #190a5e 40%);
-color:white;
-border:#190a5e;
+  background-color: #f793c8;
+  background-image: linear-gradient(315deg, #f793c8 0%, #190a5e 40%);
+  color:white;
+  border:#190a5e;
 }
 
 
-/*Navbar ensuring all screen is covered*/
+/*Navbar*/
 .container-fluid {
   padding-left: 0px;
   padding-right: 0px;

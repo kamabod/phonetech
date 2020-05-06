@@ -8,50 +8,50 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    
+
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <!--Links to css files-->
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/phones.css">
-    
+
     <!--Links to js files-->
     <script src="js/login.js"></script>
     <script src="js/shoppingBasket.js"></script>
-    
+
 
     <title>Phones</title>
 
   </head>
 
   <body>
-  <!--Php embedded-->
-  <?php
-    
-      //Create a database connection
-      $dbhost = "localhost";
-      $dbuser = "root";
-      $dbpassword = "";
-      $dbname = "phonetech_db";
+    <!--Php embedded-->
+    <?php
 
-      $connection = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
-      
-      //Test if connection occoured
-      if(mysqli_connect_errno()){
-        die("DB connection failed: " .
-          mysqli_connect_error() .
-            " (" . mysqli_connect_errno() . ")"
-            );
-      }
+    //Create a database connection
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpassword = "";
+    $dbname = "phonetech_db";
 
-      if (!$connection)
-        {
-          die('Could not connect: ' . mysqli_error());
-        }
-      
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
+
+    //Test if connection occoured
+    if (mysqli_connect_errno()) {
+      die("DB connection failed: " .
+        mysqli_connect_error() .
+        " (" . mysqli_connect_errno() . ")");
+    }
+
+    if (!$connection) {
+      die('Could not connect: ' . mysqli_error(
+        null
+      ));
+    }
+
     ?>
-  <!--Navbar Back and logged in-->
+    <!--Navbar Back and logged in-->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -66,7 +66,7 @@
         </div>
       </div>
 
-  <!--Page contents-->
+      <!--Page contents-->
       <h1 class="ad-text-phones">Smartphones</h1>
       <p class="ad-text-phones">Smartphones are the most personal tech we own. That is why it is so important to
         pick the
@@ -76,57 +76,54 @@
       <br>
       <div class="row">
         <div class="col-md-6 img-phones text-center">
-  <!--Php embedded to display data from db-->
-        <?php
+          <!--Php embedded to display data from db-->
+          <?php
 
-            $phone_id =$_GET['id'];
-            $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-            $result = mysqli_query($connection,$sql);
+          $phone_id = $_GET['id'];
+          $sql = 'SELECT * FROM products WHERE product_id=' . $phone_id;
+          $result = mysqli_query($connection, $sql);
 
-            while ($row = mysqli_fetch_assoc($result)){
-              echo "<img src='DBimages/"  .$row['image'] . "' width='220' height='330'>";
-            }
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo "<img src='DBimages/"  . $row['image'] . "' width='220' height='330'>";
+          }
 
-            mysqli_free_result($result);
-             
-        ?>
+          mysqli_free_result($result);
+
+          ?>
 
         </div>
         <div class="col-md-4 text-phones phone-padding">
-            <?php
+          <?php
 
-              $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-              $result = mysqli_query($connection,$sql);
+          $sql = 'SELECT * FROM products WHERE product_id=' . $phone_id;
+          $result = mysqli_query($connection, $sql);
 
-              while ($row = mysqli_fetch_array($result)) {
-                echo "<ul id='phoneList'>";
-                echo "<li>" . $row['name']. "</li>";
-                echo "<li>" . $row['price']. "</li>";
-                echo  "<li>" . $row['storage']. "</li>";
-                echo  "<li>" . $row['colour']. "</li>";
-                echo  "<li>" . $row['display']. "</li>";
-                echo  "<li>" . $row['camera']. "</li>";
-                echo  "<li>" . $row['processor']. "</li>";
-              }
+          while ($row = mysqli_fetch_array($result)) {
+            echo "<ul id='phoneList'>";
+            echo "<li>" . $row['name'] . "</li>";
+            echo "<li>" . $row['price'] . "</li>";
+            echo  "<li>" . $row['storage'] . "</li>";
+            echo  "<li>" . $row['colour'] . "</li>";
+            echo  "<li>" . $row['display'] . "</li>";
+            echo  "<li>" . $row['camera'] . "</li>";
+            echo  "<li>" . $row['processor'] . "</li>";
+          }
 
-              echo "</ul>";
-                
-              mysqli_free_result($result);
+          echo "</ul>";
 
-            ?>
-         
+          mysqli_free_result($result);
+
+          ?>
+
         </div>
-
         <div class="col-md-2 phone-padding">
-    <!--Buttons-->
+          <!--Buttons-->
           <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
             buy</button>
           <br>
           <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1" id="buyNowButton">Buy
             now</button>
-
         </div>
-
       </div>
     </div>
 
@@ -179,48 +176,47 @@
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Product</h6>
-    <!--Php embedded-->
+                      <!--Php embedded-->
                       <small class="text-muted">
                         <?php
-                          $phone_id =$_GET['id'];
-                          $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                          $result = mysqli_query($connection,$sql);
-                          while ($row = mysqli_fetch_assoc($result)){
-                            echo $row['name'];
-                            echo "<input type='hidden' id='productId' value='".$phone_id."'/>";
-                          }
-                          mysqli_free_result($result);
+                        $phone_id = $_GET['id'];
+                        $sql = 'SELECT * FROM products WHERE product_id=' . $phone_id;
+                        $result = mysqli_query($connection, $sql);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                          echo $row['name'];
+                          echo "<input type='hidden' id='productId' value='" . $phone_id . "'/>";
+                        }
+                        mysqli_free_result($result);
                         ?>
-                      </small> 
+                      </small>
                     </div>
                     <div>
                       <h6 class="my-0">Quantity</h6>
-                      <input type="text" id="productQuantity" onchange="sumCalculation()"/>
+                      <input type="text" id="productQuantity" onchange="sumCalculation()" />
                     </div>
                     <div>
                       <h6 class="my-0">Price (Eur)</h6>
                       <small class="text-muted" id="productPrice">
-                      <?php
+                        <?php
 
-                        $phone_id =$_GET['id'];
-                        $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                        $result = mysqli_query($connection,$sql);
-                        while ($row = mysqli_fetch_assoc($result)){
+                        $phone_id = $_GET['id'];
+                        $sql = 'SELECT * FROM products WHERE product_id=' . $phone_id;
+                        $result = mysqli_query($connection, $sql);
+                        while ($row = mysqli_fetch_assoc($result)) {
                           echo $row['price'];
-                         
-                          }
-                          mysqli_free_result($result);
+                        }
+                        mysqli_free_result($result);
                         ?>
-                      
+
                       </small>
                     </div>
                     <span class="text-muted" id="productSum"></span>
                   </li>
                 </ul>
               </div>
-              <div class ="col-md-5"></div>
+              <div class="col-md-5"></div>
               <div class="col-md-7">
-              <ul class="list-group mb-3">
+                <ul class="list-group mb-3">
                   <li class="list-group-item d-flex justify-content-between">
                     <span>Sub-total (EUR)</span>
                     <strong id="productSubTotal"></strong>
@@ -238,29 +234,27 @@
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-primary" onclick="confirmOrder()">Confirm order</button>
-            
+            <button type="button" class="btn btn-primary" onclick="confirmOrder()">Confirm order</button>
+
           </div>
         </div>
       </div>
     </div>
-    
-  <!--Js script to get values and pass them onto confirmOrder page-->
-  <script>
 
-    function confirmOrder(){
+    <!--Js script to get values and pass them onto confirmOrder page-->
+    <script>
+      function confirmOrder() {
 
-      var productId=document.getElementById("productId").value;
-      var productQuantity=document.getElementById("productQuantity").value;
-      var productPrice=document.getElementById("productPrice").text;
-      var userEmail=document.getElementById("userLoggedIn").innerText;
+        var productId = document.getElementById("productId").value;
+        var productQuantity = document.getElementById("productQuantity").value;
+        var productPrice = document.getElementById("productPrice").text;
+        var userEmail = document.getElementById("userLoggedIn").innerText;
 
-      // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
-      window.location = "confirmOrder.php?phoneid="+ productId + "&qty="+productQuantity+"&email="+userEmail;
-      
-    }
+        // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
+        window.location = "confirmOrder.php?phoneid=" + productId + "&qty=" + productQuantity + "&email=" + userEmail;
 
-   </script>
+      }
+    </script>
 
 
 

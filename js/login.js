@@ -1,4 +1,4 @@
-    
+
     //Password  and email validation
     function checkPassword(event) {
 
@@ -11,7 +11,7 @@
     document.getElementById("passwordMessage").style.display = "none";
     document.getElementById("emailMessage").style.display = "none";
 
-    // Password validation
+    // Password validation 
     if (userPassword == "") {
         document.getElementById("passwordMessage").style.display = "Block";
         invalidFields = true;

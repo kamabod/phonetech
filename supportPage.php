@@ -8,8 +8,7 @@
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Links to css files -->
 		<link rel="stylesheet" href="css/support.css">
@@ -28,7 +27,7 @@
 					</nav>
 				</div>
 			</div>
-		<!-- Jumbotron -->
+			<!-- Jumbotron -->
 			<div class="jumbotron row-bg-support">
 				<h1 class="display-10">We are here to help!</h1>
 				<p class="lead">How can we help you?</p>
@@ -48,6 +47,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-</body>
+	</body>
 
-</html>
+	</html>

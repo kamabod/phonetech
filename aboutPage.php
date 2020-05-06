@@ -27,31 +27,31 @@
 				</nav>
 			</div>
 		</div>
-	<!--Page content-->
+		<!--Page content-->
 		<div class="row row-bg">
-			<div class="col-md-3"> 		
+			<div class="col-md-3">
 			</div>
-		    <div class="col-md-6 text-justify vertical-center">
+			<div class="col-md-6 text-justify vertical-center">
 				<p><strong>Our Story</strong><br><br>
 
-				Welcome to Phonetech.<br>
+					Welcome to Phonetech.<br>
 
-				We are dedicated to giving you the very best of smart phones, with a focus on dependability and customer
-				service.<br>
-				Founded in 2000 by Kamila Zuzurka, Phonetech has come a long way from its beginnings in Gdansk,
-				Poland.<br>
-				When Kamila first started out, her passion for technology drove her to open a small phone stand and gave
-				her impetus to turn
-				hard work and inspiration into a booming online store.<br>
-				We now serve customers all over the world.<br>
-				We hope you enjoy our products as much as we enjoy offering them to you.<br>
-				Sincerely,<br>
+					We are dedicated to giving you the very best of smart phones, with a focus on dependability and customer
+					service.<br>
+					Founded in 2000 by Kamila Zuzurka, Phonetech has come a long way from its beginnings in Gdansk,
+					Poland.<br>
+					When Kamila first started out, her passion for technology drove her to open a small phone stand and gave
+					her impetus to turn
+					hard work and inspiration into a booming online store.<br>
+					We now serve customers all over the world.<br>
+					We hope you enjoy our products as much as we enjoy offering them to you.<br>
+					Sincerely,<br>
 
-				Kamila Zuzurka
+					Kamila Zuzurka
 				</p>
-		   </div>
+			</div>
 			<div class="col-md-3">
-		    </div>
+			</div>
 		</div>
 	</div>
 

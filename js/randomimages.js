@@ -4,7 +4,7 @@ window.onload = choosePic;
 
 //Arrays
 var myPics = new Array("Images/smartphones.jpg", "Images/phoneOnDesk.jpg", "Images/selfies.jpg", "Images/phoneInFlowers.jpg",
- "Images/phoneOnBeach.jpg","Images/phoneRunning.jpg");
+  "Images/phoneOnBeach.jpg", "Images/phoneRunning.jpg");
 var uniqueNumbers = new Array(3);
 
 function choosePic() {
@@ -18,11 +18,11 @@ function choosePic() {
 }
 
 function uniqueRandom() {
-  var randomNum = Math.floor(Math.random() * myPics.length); 
+  var randomNum = Math.floor(Math.random() * myPics.length);
 
   //Fill array unique values
   for (var i = 0; i < uniqueNumbers.length; i++) {
-    //check if number was already selected
+  //Check if number was already selected
     while (uniqueNumbers.findIndex(x => x == randomNum) >= 0) {
       randomNum = Math.floor(Math.random() * myPics.length);
     }

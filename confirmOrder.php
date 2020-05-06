@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    
+
     <!--Font Awesome for shopping basket icon-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,68 +16,66 @@
     <!--Links to css files-->
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/order.css">
-    
+
 
     <title>Confirm order</title>
 
 </head>
 
 <body class="bg-light">
-<!--Php embedded-->
-<?php
-    
-      //Create a database connection
-      $dbhost = "localhost";
-      $dbuser = "root";
-      $dbpassword = "";
-      $dbname = "phonetech_db";
+    <!--Php embedded-->
+    <?php
 
-      $connection = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
-      
-      //Test if connection occoured
-      if(mysqli_connect_errno()){
+    //Create a database connection
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpassword = "";
+    $dbname = "phonetech_db";
+
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
+
+    //Test if connection occoured
+    if (mysqli_connect_errno()) {
         die("DB connection failed: " .
-          mysqli_connect_error() .
-            " (" . mysqli_connect_errno() . ")"
-            );
-      }
+            mysqli_connect_error() .
+            " (" . mysqli_connect_errno() . ")");
+    }
 
-      if (!$connection)
-        {
-          die('Could not connect: ' . mysqli_error());
-        }
-      
-      //The Query
-      
-        $sql = "SELECT * FROM PRODUCTS";
-        $result = mysqli_query($connection, $sql);
-  ?>
+    if (!$connection) {
+        die('Could not connect: ' . mysqli_error(null));
+    }
+
+    //The Query 
+
+    $sql = "SELECT * FROM PRODUCTS";
+    $result = mysqli_query($connection, $sql);
+    ?>
 
     <!--Navbar back and logged in-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="navbar-brand" href="myProject.php">Back</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="myProject.php">Back</a>
+                        </li>
+                    </ul>
                     <span class="navbar-text" id="userLoggedIn">
-    <!--Php embedded to retrieve data from DB-->
+                        <!--Php embedded to retrieve data from DB-->
                         <?php
-                                    $phone_email = $_GET['email'];
-                                    echo $phone_email;
+                        $phone_email = $_GET['email'];
+                        echo $phone_email;
 
-                               
+
                         ?>
-                                 
-                                                                                
+
+
                     </span>
                 </nav>
             </div>
         </div>
-    <!--Order summary info-->
+        <!--Order summary info-->
         <div class="py-5 text-center">
             <h2>Order Summary</h2>
         </div>
@@ -95,21 +93,18 @@
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Product name</h6>
-    <!--Php embedded to retrieve data from db-->
+                            <!--Php embedded to retrieve data from db-->
                             <small class="text-muted">
                                 <?php
-                                $phone_id =$_GET['phoneid']; 
-                                
-                                $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                                $result = mysqli_query($connection,$sql);
-                                while ($row = mysqli_fetch_assoc($result)){
-                                echo $row['name'];
-                                    
+                                $phone_id = $_GET['phoneid'];
+
+                                $sql = 'SELECT * FROM products WHERE product_id=' . $phone_id;
+                                $result = mysqli_query($connection, $sql);
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo $row['name'];
                                 }
                                 mysqli_free_result($result);
-                            ?>
-                            
-                            
+                                ?>
                             </small>
                         </div>
                         <div>
@@ -117,29 +112,24 @@
                             <small class="text-muted" id="productQuantity">
 
                                 <?php
-                                    $phone_qty =$_GET['qty'];
-                                    echo $phone_qty;
-                      
+                                $phone_qty = $_GET['qty'];
+                                echo $phone_qty;
+
                                 ?>
-
-
                             </small>
                         </div>
                         <div>
                             <h6 class="my-0">Price</h6>
                             <small class="text-muted" id="productPrice">
-                            <?php
-                            $phone_id =$_GET['phoneid'];
-                            $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
-                            $result = mysqli_query($connection,$sql);
-                            while ($row = mysqli_fetch_assoc($result)){
-                            echo $row['price'];
-                                
-                            }
-                             mysqli_free_result($result);
-                            ?>   
-                            
-                            
+                                <?php
+                                $phone_id = $_GET['phoneid'];
+                                $sql = 'SELECT * FROM products WHERE product_id=' . $phone_id;
+                                $result = mysqli_query($connection, $sql);
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo $row['price'];
+                                }
+                                mysqli_free_result($result);
+                                ?>
                             </small>
                         </div>
                         <span class="text-muted" id="productSum"></span>
@@ -149,37 +139,37 @@
             <div class="col-md-5"></div>
             <div class="col-md-4">
 
-        <!--Totals calculations-->
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Sub-total (EUR)</span>
-                        <strong id="productSubTotal"></strong>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Vat (EUR)</span>
-                        <strong id="productVat"></strong>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (EUR)</span>
-                        <strong id="productTotal"></strong>
-                    </li>
+                <!--Totals calculations-->
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Sub-total (EUR)</span>
+                    <strong id="productSubTotal"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Vat (EUR)</span>
+                    <strong id="productVat"></strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (EUR)</span>
+                    <strong id="productTotal"></strong>
+                </li>
                 </ul>
             </div>
-                <div class="col-md-3"></div>
-            </div>
+            <div class="col-md-3"></div>
         </div>
+    </div>
 
 
-        <?php
-            //Close db connection
-            mysqli_close($connection);
-        ?>
-        <!-- Link to js file -->
-        <script src="js/shoppingBasket.js"></script>
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <?php
+    //Close db connection
+    mysqli_close($connection);
+    ?>
+    <!-- Link to js file -->
+    <script src="js/shoppingBasket.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
