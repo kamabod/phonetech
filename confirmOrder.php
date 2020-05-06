@@ -9,10 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     
-    <!--Font Awesome-->
+    <!--Font Awesome for shopping basket icon-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!--Links to css files-->
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/order.css">
     
@@ -22,7 +23,7 @@
 </head>
 
 <body class="bg-light">
-
+<!--Php embedded-->
 <?php
     
       //Create a database connection
@@ -46,12 +47,13 @@
           die('Could not connect: ' . mysqli_error());
         }
       
-      //Save the Query
+      //The Query
       
         $sql = "SELECT * FROM PRODUCTS";
         $result = mysqli_query($connection, $sql);
   ?>
 
+    <!--Navbar back and logged in-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -62,22 +64,20 @@
                     </li>
                 </ul>
                     <span class="navbar-text" id="userLoggedIn">
-
+    <!--Php embedded to retrieve data from DB-->
                         <?php
                                     $phone_email = $_GET['email'];
                                     echo $phone_email;
 
-                                
+                               
                         ?>
-                                    
+                                 
                                                                                 
                     </span>
                 </nav>
-
-
-                </nav>
             </div>
         </div>
+    <!--Order summary info-->
         <div class="py-5 text-center">
             <h2>Order Summary</h2>
         </div>
@@ -89,16 +89,16 @@
                         below.<br><br>If you have any questions, please <a href="mailto:support@phonetech.ie">Email us
                         </a> or call us at <a href="tel:+003535555551212">555-555-1212</a>
                         and we will be happy to help.
-
                     </span>
                 </h6>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Product name</h6>
+    <!--Php embedded to retrieve data from db-->
                             <small class="text-muted">
                                 <?php
-                                $phone_id =$_GET['phoneid']; //need name not id of phone
+                                $phone_id =$_GET['phoneid']; 
                                 
                                 $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
                                 $result = mysqli_query($connection,$sql);
@@ -149,7 +149,7 @@
             <div class="col-md-5"></div>
             <div class="col-md-4">
 
-            
+        <!--Totals calculations-->
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Sub-total (EUR)</span>
                         <strong id="productSubTotal"></strong>
@@ -170,11 +170,12 @@
 
 
         <?php
-            //close db connection
+            //Close db connection
             mysqli_close($connection);
         ?>
-    
+        <!-- Link to js file -->
         <script src="js/shoppingBasket.js"></script>
+        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

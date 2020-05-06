@@ -1,9 +1,11 @@
-function checkPassword(event) {
+    
+    //Password  and email validation
+    function checkPassword(event) {
 
     var invalidFields = false;
     var userPassword = document.getElementById("userPassword").value;
     var userEmail = document.getElementById("userEmail").value;
-    
+    //Email validation filter
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
     document.getElementById("passwordMessage").style.display = "none";
@@ -11,12 +13,9 @@ function checkPassword(event) {
 
     // Password validation
     if (userPassword == "") {
-        //alert("Error: Password cannot be blank!");
         document.getElementById("passwordMessage").style.display = "Block";
-        //alert("Please log in first");
         invalidFields = true;
     } else if (userPassword.length < 6) {
-        //alert("Error: Password must contain at least 6 characters");
         document.getElementById("passwordMessage").style.display = "Block";
         invalidFields = true;
     }
@@ -27,7 +26,6 @@ function checkPassword(event) {
         invalidFields = true;
     }
     else if (!filter.test(userEmail)) {
-        //alert('Please provide a valid email address');
         document.getElementById("emailMessage").style.display = "Block";
         invalidFields = true;
     }

@@ -11,13 +11,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>About us</title>
 
+	<!--Links to css files-->
 	<link rel="stylesheet" href="css/general.css">
 	<link rel="stylesheet" href="css/about.css">
 
 </head>
 
 <body>
-
+	<!--Navbar Back-->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
@@ -26,6 +27,7 @@
 				</nav>
 			</div>
 		</div>
+	<!--Page content-->
 		<div class="row row-bg">
 			<div class="col-md-3"> 		
 			</div>

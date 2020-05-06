@@ -8,24 +8,25 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
+    <!--Links to css files-->
     <link rel="stylesheet" href="css/general.css">
-
     <link rel="stylesheet" href="css/phones.css">
-
+    
+    <!--Links to js files-->
     <script src="js/login.js"></script>
     <script src="js/shoppingBasket.js"></script>
     
-
 
     <title>Phones</title>
 
   </head>
 
   <body>
-
+  <!--Php embedded-->
   <?php
     
       //Create a database connection
@@ -50,7 +51,7 @@
         }
       
     ?>
-
+  <!--Navbar Back and logged in-->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -65,6 +66,7 @@
         </div>
       </div>
 
+  <!--Page contents-->
       <h1 class="ad-text-phones">Smartphones</h1>
       <p class="ad-text-phones">Smartphones are the most personal tech we own. That is why it is so important to
         pick the
@@ -74,7 +76,7 @@
       <br>
       <div class="row">
         <div class="col-md-6 img-phones text-center">
-
+  <!--Php embedded to display data from db-->
         <?php
 
             $phone_id =$_GET['id'];
@@ -86,15 +88,14 @@
             }
 
             mysqli_free_result($result);
-
-              
+             
         ?>
 
         </div>
         <div class="col-md-4 text-phones phone-padding">
             <?php
 
-              $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;//$phone_id LIMIT 1';
+              $sql = 'SELECT * FROM products WHERE product_id='.$phone_id;
               $result = mysqli_query($connection,$sql);
 
               while ($row = mysqli_fetch_array($result)) {
@@ -117,7 +118,7 @@
         </div>
 
         <div class="col-md-2 phone-padding">
-
+    <!--Buttons-->
           <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="loginButton">Login to
             buy</button>
           <br>
@@ -129,7 +130,7 @@
       </div>
     </div>
 
-    <!-- Modal login   <a class="btn btn-primary" href="confirmOrder.php" role="button" >Confirm order</a>-->
+    <!-- Modal login-->
     <div class="modal" id="myModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -155,8 +156,6 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="checkPassword()" type="submit">Submit</button>
-            <!-- <a class="btn btn-primary" role="button" data-toggle="modal" data-target=""
-              onclick="checkPassword()">Submit</a>-->
           </div>
         </div>
       </div>
@@ -180,6 +179,7 @@
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Product</h6>
+    <!--Php embedded-->
                       <small class="text-muted">
                         <?php
                           $phone_id =$_GET['id'];
@@ -244,7 +244,8 @@
         </div>
       </div>
     </div>
-
+    
+  <!--Js script to get values and pass them onto confirmOrder page-->
   <script>
 
     function confirmOrder(){
@@ -256,18 +257,15 @@
 
       // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
       window.location = "confirmOrder.php?phoneid="+ productId + "&qty="+productQuantity+"&email="+userEmail;
-
       
-
     }
 
- 
-  </script>
+   </script>
 
 
 
     <?php
-    //close db connection
+    //Close db connection
     mysqli_close($connection);
     ?>
 

@@ -8,13 +8,16 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  
+  <!--Links to css files-->
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/main-page.css">
   <link rel="stylesheet" href="css/phones.css">
 
+  <!--Links to js files-->
   <script src="js/login.js"></script>
   <script src="js/randomimages.js"></script>
 
@@ -22,7 +25,7 @@
 </head>
 
 <body>
-
+  <!--Php embedded-->
   <?php
     
       //Create a database connection
@@ -46,12 +49,12 @@
           die('Could not connect: ' . mysqli_error());
         }
       
-      //Save the Query
+      //The Query
       
         $sql = "SELECT * FROM PRODUCTS";
         $result = mysqli_query($connection, $sql);
   ?>
-
+  <!--Navbar-->
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -68,15 +71,16 @@
         <a class="nav-link dropdown-toggle" href="http://localhost/phonetech/connectionToDb.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Phones</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <!--Php embedded-->
           <?php
             while ($row = mysqli_fetch_assoc($result)){
               echo "<a class='dropdown-item' href='phones.php?id=" . $row['product_id'] . "'>";
               echo $row['name'] . "</a>";
             }
           ?>
-          <!-- <a class="dropdown-item" href="http://localhost/phonetech/connectionToDb.php">Check our phones</a> -->
         </div>
           </li>
+        <!--Navbar-->
               <li class="nav-item active">
                 <a class="nav-link" href="aboutPage.php">About</a>
               </li>
@@ -86,6 +90,7 @@
             </ul>
           </div>
         </nav>
+        <!--Page contents-carousel-->
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -129,7 +134,7 @@
   </div>
 
   <?php
-    //close db connection
+    //Close db connection
     mysqli_close($connection);
   ?>
 

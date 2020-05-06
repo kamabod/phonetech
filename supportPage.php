@@ -11,6 +11,7 @@
 		<link rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+		<!-- Links to css files -->
 		<link rel="stylesheet" href="css/support.css">
 		<link rel="stylesheet" href="css/general.css">
 
@@ -18,7 +19,7 @@
 	</head>
 
 	<body>
-
+		<!-- Navbar back -->
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
@@ -27,6 +28,7 @@
 					</nav>
 				</div>
 			</div>
+		<!-- Jumbotron -->
 			<div class="jumbotron row-bg-support">
 				<h1 class="display-10">We are here to help!</h1>
 				<p class="lead">How can we help you?</p>

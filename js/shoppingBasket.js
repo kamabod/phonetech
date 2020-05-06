@@ -1,3 +1,6 @@
+
+//Calculations in shopping basket
+
 window.onload = sumCalculation;
 
 function sumCalculation() {

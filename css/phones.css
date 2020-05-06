@@ -1,3 +1,4 @@
+/*Phone images styling*/
 .img-phones {
     display: block;
     margin-left: auto;
@@ -5,28 +6,31 @@
     width: 50%;
     align-items: center;
 }
-
+/*Phones styling*/
 .ad-text-phones {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
     
 }
-
+/*Phones styling*/
 .phone-padding {
     padding-top: 50px;
 }
 
+/*Modal styling*/
 .modal-header {
 background-color: #f793c8;
 background-image: linear-gradient(315deg, #f793c8 0%, #190a5e 40%);
 
 }
 
+/*Modal styling*/
 .modal-title {
     color:white;
 }
 
+/*Modal styling font awesome*/
 .fa-shopping-cart{
     color:white;
 }
@@ -35,6 +39,7 @@ background-image: linear-gradient(315deg, #f793c8 0%, #190a5e 40%);
 #passwordMessage {
     display: none;
 }
+/*login*/
 #userLoggedIn {
     display: none;
 }
@@ -45,14 +50,10 @@ background-image: linear-gradient(315deg, #f793c8 0%, #190a5e 40%);
 
 }
 
-
+/*Email message*/
 #emailMessage {
     display:none;
 }
 
 
 
-/*Login button
-#loginButton {
-    display: none;
-}*/
