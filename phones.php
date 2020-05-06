@@ -101,7 +101,7 @@
           while ($row = mysqli_fetch_array($result)) {
             echo "<ul id='phoneList'>";
             echo "<li>" . $row['name'] . "</li>";
-            echo "<li>" . $row['price'] . "</li>";
+            echo "<li>" . $row['price'] . " Euro </li>";
             echo  "<li>" . $row['storage'] . "</li>";
             echo  "<li>" . $row['colour'] . "</li>";
             echo  "<li>" . $row['display'] . "</li>";
