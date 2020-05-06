@@ -65,7 +65,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item dropdown nav-item active">
-                <a class="nav-link dropdown-toggle" href="http://localhost/phonetech/connectionToDb.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Phones</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <!--Php embedded-->
@@ -96,19 +96,19 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="Images/smartphones.jpg" id="image1" class="d-block w-100">
+              <img src="" id="image1" class="d-block w-100">
               <div class="carousel-caption">
                 <h1 class="h3-responsive">Connect</h1>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="Images/phoneInSpace.jpg" id="image2" class="d-block w-100">
+              <img src="" id="image2" class="d-block w-100">
               <div class="carousel-caption">
                 <h1 class="h3-responsive">Communicate</h1>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="Images/selfies.jpg" id="image3" class="d-block w-100">
+              <img src="" id="image3" class="d-block w-100">
               <div class="carousel-caption">
                 <h1 class="h3-responsive">Experience</h1>
               </div>

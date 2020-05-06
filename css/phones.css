@@ -54,5 +54,8 @@
     display:none;
 }
 
-
+/*Phones qty*/
+#productQuantity { 
+    width: 60px;
+}
 

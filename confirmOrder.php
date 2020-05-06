@@ -58,7 +58,7 @@
                 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="navbar-brand" href="myProject.php">Back</a>
+                            <a class="navbar-brand" href="index.php">Back</a>
                         </li>
                     </ul>
                     <span class="navbar-text" id="userLoggedIn">
@@ -136,9 +136,10 @@
                     </li>
             </div>
             <div class="col-md-3"></div>
+        </div>
+        <div class="row">
             <div class="col-md-5"></div>
             <div class="col-md-4">
-
                 <!--Totals calculations-->
                 <li class="list-group-item d-flex justify-content-between">
                     <span>Sub-total (EUR)</span>
@@ -158,7 +159,6 @@
         </div>
     </div>
 
-
     <?php
     //Close db connection
     mysqli_close($connection);
@@ -172,4 +172,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>

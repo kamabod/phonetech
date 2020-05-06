@@ -58,7 +58,7 @@
           <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="navbar-brand" href="myProject.php">Back</a>
+                <a class="navbar-brand" href="index.php">Back</a>
               </li>
             </ul>
             <span class="navbar-text" id="userLoggedIn">Logged In</span>
@@ -192,7 +192,7 @@
                     </div>
                     <div>
                       <h6 class="my-0">Quantity</h6>
-                      <input type="text" id="productQuantity" onchange="sumCalculation()" />
+                      <input type="number" id="productQuantity" onchange="sumCalculation()" onkeyup="sumCalculation()" value="1" />
                     </div>
                     <div>
                       <h6 class="my-0">Price (Eur)</h6>
@@ -214,6 +214,8 @@
                   </li>
                 </ul>
               </div>
+            </div>
+            <div class="row">
               <div class="col-md-5"></div>
               <div class="col-md-7">
                 <ul class="list-group mb-3">
@@ -250,8 +252,11 @@
         var productPrice = document.getElementById("productPrice").text;
         var userEmail = document.getElementById("userLoggedIn").innerText;
 
-        // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
-        window.location = "confirmOrder.php?phoneid=" + productId + "&qty=" + productQuantity + "&email=" + userEmail;
+        // If user inputs a number greater than 0 
+        if (!isNaN(productQuantity) && productQuantity > 0) {
+          // http://localhost/phonetech/confirmOrder.php?phoneid=1&qty=1&email=kamila@kp.com
+          window.location = "confirmOrder.php?phoneid=" + productId + "&qty=" + productQuantity + "&email=" + userEmail;
+        }
 
       }
     </script>

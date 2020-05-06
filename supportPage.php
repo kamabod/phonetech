@@ -23,7 +23,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
-						<a class="navbar-brand" href="myProject.php">Back</a>
+						<a class="navbar-brand" href="index.php">Back</a>
 					</nav>
 				</div>
 			</div>

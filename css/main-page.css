@@ -1,23 +1,24 @@
-.row-bg {
-  background-image: url("../Images/smartphones.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: px;
-  opacity: 1;
+body{
+  overflow-x: hidden;
 }
+
 /*Carousel styling*/
 .carousel-item {
   height: 580px
 }
-/*Carousel styling
-.carousel-content {
-  color: #f793c8;
-  font-size: xx-large;
-  position: absolute;
-  bottom: 60%;
-  left: 40%*/
 
 /*Carousel styling*/
 .h3-responsive {
   color:#190a5e;
+}
+
+/*Menu in small screens*/
+#navbarSupportedContent{
+  background-color:#190a5e;
+  max-width: 150px;
+  padding: 10px;
+}
+.dropdown-menu.show {
+  display: block;
+  width: fit-content;
 }
