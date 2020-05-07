@@ -192,7 +192,7 @@
                     </div>
                     <div>
                       <h6 class="my-0">Quantity</h6>
-                      <input type="number" id="productQuantity" onchange="sumCalculation()" onkeyup="sumCalculation()" value="1" />
+                      <input type="number" id="productQuantity" onchange="sumCalculation()" onkeyup="sumCalculation()" value="1" min="1" max="100"/>
                     </div>
                     <div>
                       <h6 class="my-0">Price (Eur)</h6>
